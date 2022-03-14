@@ -55,9 +55,9 @@ class BlogController extends Controller
 
     public function edit($id)
     {
-        $blogs = $this->blogRepository->getById($id);
+        $blog = $this->blogRepository->getById($id);
         $categories = $this->categoryRepository->getAll();
-        return view('backend.blog.update', compact('blogs'));
+        return view('backend.blog.update', compact('blog','categories','id'));
 
     }
 

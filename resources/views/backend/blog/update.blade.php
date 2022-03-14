@@ -5,7 +5,7 @@
     <input type="text"name="content"placeholder="Content" value="{{$blog->content}}">
     <select name="category_id">
         @foreach($categories as $category)
-            <option value="{{$category->id}}">{{$category->name}}</option>
+            <option {{($blog->category_id == $category->id)?'selected':''}} value="{{$category->id}}">{{$category->name}}</option>
         @endforeach
     </select>
     <button>Update</button>
